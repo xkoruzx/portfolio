@@ -70,12 +70,12 @@ export function Projects() {
                             {/* Image Container with Overlay */}
                             <div className="relative h-48 overflow-hidden bg-surface-highlight">
                                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-10 group-hover:opacity-20 transition-opacity`} />
-                                <Image
-                                    src={project.image}
+                                    <img
+                                        src={project.image}
                                     // alt={project.title}
-                                    fill
-                                    className="object-cover object-center"
-                                />
+                                        
+                                        className="object-cover object-center"
+                                    />
                                 <div className="flex items-center justify-center h-full text-text-muted">
                                     <span className="font-mono text-sm">[Project Preview]</span>
                                 </div>
