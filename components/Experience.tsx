@@ -7,26 +7,26 @@ const experience = [
     {
         role: "Senior Full Stack Developer",
         company: "Tech Solutions Inc.",
-        period: "2023 - Present",
+        period: "2023 - 2024",
         desc: "Leading development of scalable web applications and overseeing cloud infrastructure.",
         type: "work",
         icon: Briefcase,
         color: "bg-primary"
     },
     {
-        role: "IT Specialist",
-        company: "Global Systems Corp",
-        period: "2021 - 2023",
+        role: "IT Support Intern",
+        company: "Andamanda Phuket Water Park",
+        period: "2021 - 2022",
         desc: "Managed internal network security, server maintenance, and automated system deployment.",
         type: "work",
         icon: Network,
         color: "bg-purple-500"
     },
     {
-        role: "Web Dev Intern",
-        company: "Creative Studio",
+        role: "Marketing Intern",
+        company: "S.D Phuket Computer",
         period: "2020 - 2021",
-        desc: "Assisted in frontend development using React and maintained legacy client sites.",
+        desc: "Assisted in marketing / social media task to for selling diy hardware",
         type: "intern",
         icon: GraduationCap,
         color: "bg-secondary"

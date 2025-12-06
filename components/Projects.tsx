@@ -17,19 +17,19 @@ const projects = [
         color: "from-blue-500 to-cyan-500"
     },
     {
-        title: "",
-        status: "Beta",
-        description: "Python-based network monitoring tool that visualizes traffic patterns and detects anomalies.",
-        image: "/api/placeholder/600/400",
+        title: "Booking Data Extractor",
+        status: "Live",
+        description: "A hybrid Next.js & FastAPI solution featuring a custom Context-Aware Heuristic Engine to accurately parse and structure complex, multi-page PDF travel itineraries.",
+        image: "https://i.ibb.co/hJdccYpc/image.png",
         tags: ["Python", "Typescript", "Javascript"],
-        github: "#",
-        live: "#",
+        github: "https://github.com/xkoruzx/bookingapp",
+        live: "https://bookingapp-lclk.vercel.app/",
         color: "from-emerald-500 to-green-500"
     },
     {
-        title: "Task_Flow_App.react",
-        status: "Dev",
-        description: "Collaborative task management application with drag-and-drop kanban boards and team chat.",
+        title: "Full Animation Website STyle",
+        status: "LFI",
+        description: "Soon.....",
         image: "/api/placeholder/600/400",
         tags: ["React", "Firebase", "Redux"],
         github: "#",
@@ -115,12 +115,14 @@ export function Projects() {
                                 <div className="flex gap-4">
                                     <Link
                                         href={project.github}
+                                        target="_blank"
                                         className="flex-1 py-2 flex items-center justify-center gap-2 rounded-lg bg-surface-highlight hover:bg-surface-highlight/80 text-sm font-medium transition-colors"
                                     >
                                         <Github size={16} /> Code
                                     </Link>
                                     <Link
                                         href={project.live}
+                                        target="_blank"
                                         className="flex-1 py-2 flex items-center justify-center gap-2 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 text-sm font-medium transition-colors"
                                     >
                                         <ExternalLink size={16} /> Demo
