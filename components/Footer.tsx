@@ -12,10 +12,10 @@ export function Footer() {
                 </div>
 
                 <div className="flex items-center gap-6">
-                    <Link href="https://github.com/xkoruzx" target ="_blank" className="text-text-muted hover:text-primary transition-colors"><Github size={20} /></Link>
-                    <Link href="https://www.linkedin.com/in/suradit-rongmuang-3856a8355/" target ="_blank" className="text-text-muted hover:text-blue-400 transition-colors"><Linkedin size={20} /></Link>
-                    <Link href="#" target ="_blank" className="text-text-muted hover:text-sky-400 transition-colors"><Twitter size={20} /></Link>
-                    <Link href="#" target ="_blank" className="text-text-muted hover:text-secondary transition-colors"><Mail size={20} /></Link>
+                    <Link href="https://github.com/xkoruzx" target="_blank" className="text-text-muted hover:text-primary transition-colors"><Github size={20} /></Link>
+                    <Link href="https://www.linkedin.com/in/suradit-rongmuang-3856a8355/" target="_blank" className="text-text-muted hover:text-blue-400 transition-colors"><Linkedin size={20} /></Link>
+                    <Link href="#" target="_blank" className="text-text-muted hover:text-sky-400 transition-colors"><Twitter size={20} /></Link>
+                    <Link href="mailto:suradit.nus@gmail.com?subject=Hi I'am Nus &body=If you want to text me you can text me here!!" target="_blank" className="text-text-muted hover:text-secondary transition-colors"><Mail size={20} /></Link>
                 </div>
 
                 <div className="text-text-muted text-xs font-mono">
