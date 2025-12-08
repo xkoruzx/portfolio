@@ -27,10 +27,10 @@ const projects = [
         color: "from-emerald-500 to-green-500"
     },
     {
-        title: "Full Animation Website STyle",
+        title: "Full Animation Website",
         status: "LFI",
         description: "Soon.....",
-        image: "/api/placeholder/600/400",
+        image: "https://i.ibb.co/wrpCW57j/image.png",
         tags: ["React", "Firebase", "Redux"],
         github: "#",
         live: "#",

@@ -1,23 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, Network, GraduationCap } from "lucide-react";
+import { Briefcase, Network, GraduationCap, ClipboardList, CodeXml, BriefcaseBusiness } from "lucide-react";
 
 const experience = [
     {
-        role: "Senior Full Stack Developer",
-        company: "Tech Solutions Inc.",
-        period: "2023 - 2024",
-        desc: "Leading development of scalable web applications and overseeing cloud infrastructure.",
+        role: "Operation List",
+        company: "Celtours Company",
+        period: "2024 - Current",
+        desc: "Cooperate with itaka / cedok on other country for good services with customer from tourism",
         type: "work",
-        icon: Briefcase,
+        icon: ClipboardList,
+        color: "bg-green-900"
+    },
+    {
+        role: "Junior Developer / Assist Teacher",
+        company: "True Coding School",
+        period: "2023 - 2024",
+        desc: "Making an cleaning app and teaching python,C#,lua language for kid 6-12 years",
+        type: "work",
+        icon: CodeXml,
         color: "bg-primary"
     },
     {
         role: "IT Support Intern",
         company: "Andamanda Phuket Water Park",
         period: "2021 - 2022",
-        desc: "Managed internal network security, server maintenance, and automated system deployment.",
+        desc: "Get Ready for Solved problem customer that got problem on wristband (RFID) and POS.",
         type: "work",
         icon: Network,
         color: "bg-purple-500"
@@ -28,7 +37,7 @@ const experience = [
         period: "2020 - 2021",
         desc: "Assisted in marketing / social media task to for selling diy hardware",
         type: "intern",
-        icon: GraduationCap,
+        icon: BriefcaseBusiness,
         color: "bg-secondary"
     }
 ];
