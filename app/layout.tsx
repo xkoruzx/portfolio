@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dev Portfolio | The Quiet Problem Solver",
+  title: "Suradit | Portfolio",
   description: "Junior-to-Intermediate Full Stack Developer & IT Specialist Portfolio",
 };
 
