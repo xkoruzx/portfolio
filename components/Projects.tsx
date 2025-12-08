@@ -55,7 +55,7 @@ export function Projects() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="mb-16"
                 >
                     <div className="flex items-center gap-4 mb-4">
@@ -73,7 +73,7 @@ export function Projects() {
                             key={project.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: index * 0.1 }}
                             onMouseEnter={() => setHoveredProject(project.title)}
                             onMouseLeave={() => setHoveredProject(null)}

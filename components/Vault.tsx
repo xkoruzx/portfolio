@@ -42,7 +42,7 @@ export function Vault() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-center mb-16"
                 >
                     <div className="inline-flex items-center justify-center p-3 bg-surface-highlight rounded-full mb-4">
@@ -58,7 +58,7 @@ export function Vault() {
                             key={item.title}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: index * 0.1 }}
                             className="group relative aspect-square bg-surface border border-surface-highlight rounded-xl overflow-hidden hover:border-secondary/50 transition-colors"
                         >

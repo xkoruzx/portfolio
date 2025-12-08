@@ -25,7 +25,7 @@ export function Skills() {
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-3xl md:text-5xl font-heading font-bold text-center mb-16"
                 >
                     <span className="text-secondary">&lt;</span> System Stats <span className="text-secondary">/&gt;</span>
@@ -39,7 +39,7 @@ export function Skills() {
                                 key={skill.name}
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.2 }}
                                 transition={{ delay: index * 0.1 }}
                             >
                                 <div className="flex justify-between mb-2 font-mono text-sm uppercase tracking-wide">
@@ -50,7 +50,7 @@ export function Skills() {
                                     <motion.div
                                         initial={{ width: 0 }}
                                         whileInView={{ width: `${skill.level}%` }}
-                                        viewport={{ once: true }}
+                                        viewport={{ once: false }}
                                         transition={{ duration: 1, ease: "easeOut" }}
                                         className={`h-full ${skill.color} relative accent-glow`}
                                     >
@@ -66,7 +66,7 @@ export function Skills() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="bg-background border border-surface-highlight rounded-lg overflow-hidden shadow-2xl p-4 font-mono text-sm relative group"
                     >
                         {/* Terminal Header */}

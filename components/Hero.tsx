@@ -21,7 +21,8 @@ export function Hero({ onContactClick }: HeroProps) {
                 {/* Text Content */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.8 }}
                     className="flex-1 text-center md:text-left"
                 >
@@ -62,7 +63,8 @@ export function Hero({ onContactClick }: HeroProps) {
                 {/* Visual / Avatar Placeholder */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="flex-1 relative"
                 >

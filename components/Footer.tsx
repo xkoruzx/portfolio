@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Footer() {
     return (
         <footer id="contact" className="py-12 border-t border-surface-highlight bg-surface/30">
-            <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"
+            >
 
                 <div className="text-center md:text-left">
                     <h3 className="text-xl font-heading font-bold text-text-main mb-2">SURADIT RONGMUANG</h3>
@@ -21,7 +27,7 @@ export function Footer() {
                 <div className="text-text-muted text-xs font-mono">
                     &copy; My Portfolio.
                 </div>
-            </div>
+            </motion.div>
         </footer>
     );
 }

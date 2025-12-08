@@ -68,7 +68,7 @@ export function Experience() {
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="text-3xl md:text-5xl font-heading font-bold mb-16 text-center"
                 >
                     // Experience Timeline
