@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { TypewriterTitle } from "@/components/TypewriterTitle";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} antialiased selection:bg-primary selection:text-black`}
       >
+        <TypewriterTitle />
         <div className="relative min-h-screen">
           <Navbar />
           {children}
