@@ -8,7 +8,7 @@ const experience = [
     {
         role: "Operation List",
         company: "Celtours Company",
-        period: "2024 - Current",
+        period: "2025 - Current",
         desc: "Cooperate with itaka / cedok on other country for good services with customer from tourism",
         type: "work",
         icon: ClipboardList,
@@ -20,7 +20,7 @@ const experience = [
     {
         role: "Junior Developer / Assist Teacher",
         company: "True Coding School",
-        period: "2023 - 2024",
+        period: "2024 - 2025",
         desc: "Making an cleaning app and teaching python,C#,lua language for kid 6-12 years",
         type: "work",
         icon: CodeXml,
@@ -33,7 +33,7 @@ const experience = [
     {
         role: "IT Support Intern",
         company: "Andamanda Phuket Water Park",
-        period: "2021 - 2022",
+        period: "2022 - 2023",
         desc: "Get Ready for Solved problem customer that got problem on wristband (RFID) and POS.",
         type: "work",
         icon: Network,
