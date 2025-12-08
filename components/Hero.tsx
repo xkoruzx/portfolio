@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, Code, Server, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
-export function Hero() {
+interface HeroProps {
+    onContactClick: () => void;
+}
+
+export function Hero({ onContactClick }: HeroProps) {
     return (
         <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             {/* Background Grid Effect */}
@@ -46,12 +50,12 @@ export function Hero() {
                             See My Work
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
-                        <Link
-                            href="#contact"
+                        <button
+                            onClick={onContactClick}
                             className="px-8 py-3 rounded-lg hover:bg-surface-highlight text-text-muted transition-all font-mono"
                         >
                             Contact Me
-                        </Link>
+                        </button>
                     </div>
                 </motion.div>
 
@@ -67,16 +71,16 @@ export function Hero() {
                         <div className="absolute inset-0 rounded-full border border-primary/20 animate-[spin_10s_linear_infinite]" />
                         <div className="absolute inset-4 rounded-full border border-secondary/20 animate-[spin_15s_linear_infinite_reverse]" />
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-full blur-3xl opacity-30" />
-        
+
                         {/* Avatar Image Placeholder */}
                         <div className="absolute inset-6 rounded-full bg-surface-highlight flex items-center justify-center overflow-hidden border-2 border-surface-highlight group">
-                            <motion.img 
-                                src = "https://i.ibb.co/4g3Spyyh/Gemini-Generated-Image-21c9ip21c9ip21c9.png" 
+                            <motion.img
+                                src="https://i.ibb.co/4g3Spyyh/Gemini-Generated-Image-21c9ip21c9ip21c9.png"
                                 alt="Avatar"
                                 className="w-full h-full object-cover"
-                                initial={{ opacity: 0, scale : 0.9}}
-                                animate={{ opacity: 1, scale : 1}}
-                                transition={{ duration: 0.6}}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.6 }}
                             />
 
                             {/* Floating Skill Icons (Decoration) */}

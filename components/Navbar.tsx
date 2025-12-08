@@ -13,7 +13,11 @@ const navLinks = [
     { name: "Vault", href: "#vault" },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+    onContactClick: () => void;
+}
+
+export function Navbar({ onContactClick }: NavbarProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 

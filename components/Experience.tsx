@@ -86,8 +86,14 @@ export function Experience() {
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.2 }}
+                                viewport={{ once: false, amount: 0.3 }} // Re-trigger animation on entry
+                                transition={{ delay: index * 0.1, duration: 0.5 }} // Slightly lower delay for smoother scrolling re-entry
+                                onViewportLeave={() => {
+                                    // Optional: Auto-collapse expanded gallery when item leaves viewport
+                                    if (hoveredIndex === index) {
+                                        setHoveredIndex(null);
+                                    }
+                                }}
                                 className={`relative flex flex-col md:flex-row gap-8 items-start ${index % 2 === 0 ? "md:flex-row-reverse" : ""
                                     }`}
                             >
