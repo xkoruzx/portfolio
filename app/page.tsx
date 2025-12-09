@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { Skills } from "@/components/Skills";
@@ -9,21 +9,36 @@ import { Experience } from "@/components/Experience";
 import { Vault } from "@/components/Vault";
 import { Footer } from "@/components/Footer";
 import { ContactModal } from "@/components/ContactModal";
+import { Preloader } from "@/components/Preloader";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(true);
 
-  const openContact = () => setIsContactOpen(true);
+  // Manage body scroll
+  useEffect(() => {
+    if (showPreloader) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [showPreloader]);
 
   return (
-    <main className="min-h-screen bg-background text-text-main font-body selection:bg-primary/30 selection:text-white pb-20">
-      <Navbar onContactClick={openContact} />
-      <Hero onContactClick={openContact} />
+    <main className="bg-background min-h-screen relative">
+      <AnimatePresence mode="wait">
+        {showPreloader && <Preloader key="preloader" onFinish={() => setShowPreloader(false)} />}
+      </AnimatePresence>
+
+      <Navbar onContactClick={() => setIsContactOpen(true)} />
+      <Hero onContactClick={() => setIsContactOpen(true)} />
       <Skills />
       <Projects />
       <Experience />
       <Vault />
       <Footer />
+
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </main>
   );
