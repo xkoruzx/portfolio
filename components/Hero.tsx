@@ -35,8 +35,8 @@ export function Hero({ onContactClick }: HeroProps) {
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6">
-                        The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-glow to-white">Quiet</span> <br />
-                        Problem Solver.
+                        SU<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-glow to-white">RADIT</span> <br />
+                        JUNIOR DEV.
                     </h1>
 
                     <p className="text-text-muted text-lg md:text-xl max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed">

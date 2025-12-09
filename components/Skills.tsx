@@ -1,107 +1,154 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Terminal } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Terminal, Cpu, Database, Layout, Wrench } from "lucide-react";
+import { PiFileCSharpFill } from "react-icons/pi";
+import { FaReact, FaNodeJs, FaPython, FaDocker, FaLinux, FaGitAlt, FaYarn, FaGithub, FaUnity, } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiTypescript, SiPostgresql, SiNginx, SiLua, SiSolidity, SiEthers, SiPostman, SiFigma, SiBun, SiCoinbase, SiSupabase, SiFirebase, SiJavascript, SiFlutter, SiNfc, SiNvidia, SiInternetcomputer, SiCplusplus } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
-const skills = [
-    { name: "Frontend Development", level: 50, color: "bg-primary" },
-    { name: "Backend Engineering", level: 75, color: "bg-secondary" },
-    { name: "IT & System Admin", level: 60, color: "bg-green-500" },
-    { name: "UI/UX Design", level: 40, color: "bg-purple-500" },
+// Organize data structure for efficient filtering
+const categories = [
+    { id: "languages", title: "Languages", icon: Layout },
+    { id: "framework", title: "Frameworks", icon: Database },
+    { id: "infra", title: "Infrastructure", icon: Cpu },
+    { id: "tools", title: "Tools", icon: Wrench },
+    { id: "blockchain", title: "Blockchain / Web3", icon: Wrench },
+    { id: "cloud", title: "Cloud / Data", icon: Wrench },
 ];
 
-const logs = [
-    "> Initializing React core...",
-    "> Loading Next.js modules...",
-    "> Connecting to database...",
-    "> System optimization: 98%",
-    "> Ready."
-];
+const skillsData = {
+    languages: [
+        { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+        { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+        { name: "Python", icon: FaPython, color: "text-yellow-300" },
+        { name: "Flutter", icon: SiFlutter, color: "text-cyan-300" },
+        { name: "Javascript", icon: SiJavascript, color: "text-yellow-300" },
+        { name: "C++", icon: SiCplusplus, color: "text-blue-400" },
+        { name: "C#", icon: PiFileCSharpFill, color: "text-purple-500" },
+        { name: "Lua", icon: SiLua, color: "text-blue-800" },
+
+    ],
+    framework: [
+        { name: "React", icon: FaReact, color: "text-cyan-500" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-300" },
+
+    ],
+    infra: [
+        { name: "Linux", icon: FaLinux, color: "text-yellow-500" },
+        { name: "Networking", icon: Terminal, color: "text-orange-500" },
+        { name: "NFC Maintenance", icon: SiNfc, color: "text-cyan-500" },
+        { name: "BIOS SETUP", icon: SiInternetcomputer, color: "text-cyan-500" },
+    ],
+    tools: [
+        { name: "Git", icon: FaGitAlt, color: "text-orange-500" },
+        { name: "VS Code", icon: VscVscode, color: "text-blue-400" },
+        { name: "Postman", icon: SiPostman, color: "text-orange-500" },
+        { name: "Figma", icon: SiFigma, color: "text-purple-500" },
+        { name: "Flutterflow", icon: SiFlutter, color: "text-purple-500" },
+        { name: "TensorRT", icon: SiNvidia, color: "text-green-500" },
+        { name: "Yarn", icon: FaYarn, color: "text-cyan-600" },
+        { name: "Bun", icon: SiBun, color: "text-white" },
+        { name: "Unity", icon: FaUnity, color: "text-white" }
+    ],
+    blockchain: [
+        { name: "Coinbase", icon: SiCoinbase, color: "text-cyan-500" },
+        { name: "Ether.Js", icon: SiEthers, color: "text-purple-400" },
+        { name: "Solidity", icon: SiSolidity, color: "text-black-500" },
+    ],
+    cloud: [
+        { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
+        { name: "Supabase", icon: SiSupabase, color: "text-emerald-500" },
+        { name: "Firebase", icon: SiFirebase, color: "text-orange-500" },
+    ]
+};
 
 export function Skills() {
+    const [activeTab, setActiveTab] = useState("languages");
+    const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+
     return (
-        <section id="skills" className="py-20 bg-surface/50">
-            <div className="container mx-auto px-6">
-                <motion.h2
+        <section id="skills" className="py-24 bg-surface/50 relative overflow-hidden min-h-[600px]">
+            {/* Background Decoration */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px]" />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[100px]" />
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.2 }}
-                    className="text-3xl md:text-5xl font-heading font-bold text-center mb-16"
+                    className="text-center mb-12"
                 >
-                    <span className="text-secondary">&lt;</span> System Stats <span className="text-secondary">/&gt;</span>
-                </motion.h2>
+                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">
+                        <span className="text-secondary">&lt;</span> Tech Skills <span className="text-secondary">/&gt;</span>
+                    </h2>
+                </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    {/* Skill Bars */}
-                    <div className="space-y-8">
-                        {skills.map((skill, index) => (
-                            <motion.div
-                                key={skill.name}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: false, amount: 0.2 }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                <div className="flex justify-between mb-2 font-mono text-sm uppercase tracking-wide">
-                                    <span className="text-text-main">{skill.name}</span>
-                                    <span className="text-primary">{skill.level}%</span>
-                                </div>
-                                <div className="h-4 bg-surface-highlight rounded-full overflow-hidden border border-surface-highlight">
-                                    <motion.div
-                                        initial={{ width: 0 }}
-                                        whileInView={{ width: `${skill.level}%` }}
-                                        viewport={{ once: false }}
-                                        transition={{ duration: 1, ease: "easeOut" }}
-                                        className={`h-full ${skill.color} relative accent-glow`}
-                                    >
-                                        {/* Scanline effect inside bar */}
-                                        <div className="absolute inset-0 bg-white/20 w-full h-full animate-[shimmer_2s_infinite]" />
-                                    </motion.div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Terminal Window */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        className="bg-background border border-surface-highlight rounded-lg overflow-hidden shadow-2xl p-4 font-mono text-sm relative group"
-                    >
-                        {/* Terminal Header */}
-                        <div className="flex items-center justify-between mb-4 pb-2 border-b border-surface-highlight">
-                            <div className="flex gap-2">
-                                <div className="w-3 h-3 rounded-full bg-red-500" />
-                                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                                <div className="w-3 h-3 rounded-full bg-green-500" />
-                            </div>
-                            <div className="text-text-muted text-xs flex items-center gap-1">
-                                <Terminal size={12} /> user@dev-portfolio: ~
-                            </div>
-                        </div>
-
-                        {/* Terminal Content */}
-                        <div className="space-y-2 text-green-400">
-                            {logs.map((log, i) => (
+                {/* Tab Navigation */}
+                <div className="flex flex-wrap justify-center gap-2 mb-12 p-2 bg-surface/30 backdrop-blur-md rounded-full border border-white/5">
+                    {categories.map((cat) => (
+                        <button
+                            key={cat.id}
+                            onClick={() => setActiveTab(cat.id)}
+                            className={`relative px-6 py-2 rounded-full text-sm font-bold font-mono uppercase tracking-wide transition-colors ${activeTab === cat.id ? "text-white" : "text-text-muted hover:text-white"
+                                }`}
+                        >
+                            {activeTab === cat.id && (
                                 <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.5 + i * 0.5 }}
+                                    layoutId="activeTab"
+                                    className="absolute inset-0 bg-primary/20 border border-primary/50 rounded-full shadow-[0_0_10px_theme(colors.primary.DEFAULT)]"
+                                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                />
+                            )}
+                            <span className="relative z-10 flex items-center gap-2">
+                                <cat.icon size={16} />
+                                {cat.title}
+                            </span>
+                        </button>
+                    ))}
+                </div>
+
+                {/* Content Area */}
+                <div className="w-full max-w-4xl">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeTab}
+                            initial={{ opacity: 0, x: -20, filter: "blur(10px)" }}
+                            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                            exit={{ opacity: 0, x: 20, filter: "blur(10px)" }}
+                            transition={{ duration: 0.3 }}
+                            className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3"
+                        >
+                            {skillsData[activeTab as keyof typeof skillsData].map((skill, index) => (
+                                <motion.div
+                                    key={skill.name}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: index * 0.05 }}
+                                    whileHover={{ y: -5 }}
+                                    onMouseEnter={() => setHoveredSkill(skill.name)}
+                                    onMouseLeave={() => setHoveredSkill(null)}
+                                    className={`group relative aspect-square flex flex-col items-center justify-center bg-surface border rounded-xl transition-all duration-300 p-2 cursor-pointer 
+                                        ${hoveredSkill === skill.name ? "border-primary/50 bg-surface-highlight" : "border-white/5"}
+                                    `}
                                 >
-                                    {log}
+                                    <div className={`absolute inset-0 bg-primary/5 rounded-xl transition-opacity duration-300 ${hoveredSkill === skill.name ? "opacity-100" : "opacity-0"}`} />
+
+                                    <div className={`text-2xl mb-2 transition-all duration-300 transform ${hoveredSkill === skill.name ? `scale-110 ${skill.color}` : "text-white/60 scale-100"}`}>
+                                        <skill.icon />
+                                    </div>
+
+                                    <span className={`text-xs font-mono transition-colors relative z-10 text-center leading-tight ${hoveredSkill === skill.name ? "text-white" : "text-text-muted"}`}>
+                                        {skill.name}
+                                    </span>
                                 </motion.div>
                             ))}
-                            <motion.div
-                                animate={{ opacity: [0, 1] }}
-                                transition={{ repeat: Infinity, duration: 0.8 }}
-                                className="inline-block w-2 h-4 bg-green-400 ml-1 align-middle"
-                            />
-                        </div>
-
-                        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-background/50" />
-                    </motion.div>
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
             </div>
         </section>
