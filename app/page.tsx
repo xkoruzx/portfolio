@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/Hero";
-import { Navbar } from "@/components/Navbar";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Experience } from "@/components/Experience";
@@ -31,7 +30,6 @@ export default function Home() {
         {showPreloader && <Preloader key="preloader" onFinish={() => setShowPreloader(false)} />}
       </AnimatePresence>
 
-      <Navbar onContactClick={() => setIsContactOpen(true)} />
       <Hero onContactClick={() => setIsContactOpen(true)} />
       <Skills />
       <Projects />
