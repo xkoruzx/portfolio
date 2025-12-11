@@ -32,14 +32,14 @@ const projects = [
         glow: "group-hover:shadow-[0_0_20px_-5px_theme(colors.emerald.500)]"
     },
     {
-        title: "Portfolio Animation",
-        status: "LFI",
-        description: "Experimental portfolio showing advanced Framer Motion animations and interactive UI components.",
-        image: "https://i.ibb.co/wrpCW57j/image.png",
-        preview: "https://i.ibb.co/wrpCW57j/image.png",
-        tags: ["React", "Framer Motion", "Three.js"],
+        title: "Order System",
+        status: "Live",
+        description: "A feature-rich Cafe Ordering Platform with real-time kitchen display dashboards and persistent guest order history tracking.",
+        image: "https://i.ibb.co/p6wqrQ9c/image-4.jpg",
+        preview: "https://i.ibb.co/p6wqrQ9c/image-4.jpg",
+        tags: ["React", "Firebase", "Tailwind", "Vite"],
         github: "#",
-        live: "#",
+        live: "https://hiwmai-order.netlify.app/",
         color: "from-purple-500 to-pink-500",
         glow: "group-hover:shadow-[0_0_20px_-5px_theme(colors.purple.500)]"
     }
@@ -71,7 +71,7 @@ export function Projects() {
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.title}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 0 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: index * 0.1 }}

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Terminal, Cpu, Database, Layout, Wrench } from "lucide-react";
 import { PiFileCSharpFill } from "react-icons/pi";
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaLinux, FaGitAlt, FaYarn, FaGithub, FaUnity, } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiTypescript, SiPostgresql, SiNginx, SiLua, SiSolidity, SiEthers, SiPostman, SiFigma, SiBun, SiCoinbase, SiSupabase, SiFirebase, SiJavascript, SiFlutter, SiNfc, SiNvidia, SiInternetcomputer, SiCplusplus } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiTypescript, SiPostgresql, SiNginx, SiLua, SiVite, SiSolidity, SiEthers, SiPostman, SiFigma, SiBun, SiCoinbase, SiSupabase, SiFirebase, SiJavascript, SiFlutter, SiNfc, SiNvidia, SiInternetcomputer, SiCplusplus } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 // Organize data structure for efficient filtering
@@ -50,7 +50,8 @@ const skillsData = {
         { name: "TensorRT", icon: SiNvidia, color: "text-green-500" },
         { name: "Yarn", icon: FaYarn, color: "text-cyan-600" },
         { name: "Bun", icon: SiBun, color: "text-white" },
-        { name: "Unity", icon: FaUnity, color: "text-white" }
+        { name: "Unity", icon: FaUnity, color: "text-white" },
+        { name: "Vite", icon: SiVite, color: "text-purple-500" },
     ],
     blockchain: [
         { name: "Coinbase", icon: SiCoinbase, color: "text-cyan-500" },
