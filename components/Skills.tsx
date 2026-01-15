@@ -7,32 +7,32 @@ import { PiFileCSharpFill } from "react-icons/pi";
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaLinux, FaGitAlt, FaYarn, FaGithub, FaUnity, } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiPostgresql, SiNginx, SiLua, SiVite, SiSolidity, SiEthers, SiPostman, SiFigma, SiBun, SiCoinbase, SiSupabase, SiFirebase, SiJavascript, SiFlutter, SiNfc, SiNvidia, SiInternetcomputer, SiCplusplus } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import { BiMobile } from "react-icons/bi";
 
 // Organize data structure for efficient filtering
 const categories = [
-    { id: "languages", title: "Languages", icon: Layout },
-    { id: "framework", title: "Frameworks", icon: Database },
+    { id: "languages", title: "Frontend", icon: Layout },
+    { id: "framework", title: "Backend", icon: Database },
     { id: "infra", title: "Infrastructure", icon: Cpu },
-    { id: "tools", title: "Tools", icon: Wrench },
-    { id: "blockchain", title: "Blockchain / Web3", icon: Wrench },
-    { id: "cloud", title: "Cloud / Data", icon: Wrench },
+    { id: "others", title: "Others", icon: Wrench },
+    { id: "mobile", title: "Mobile/Apps", icon: BiMobile },
 ];
 
 const skillsData = {
     languages: [
         { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
         { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
-        { name: "Python", icon: FaPython, color: "text-yellow-300" },
-        { name: "Flutter", icon: SiFlutter, color: "text-cyan-300" },
+        { name: "React", icon: FaReact, color: "text-cyan-500" },
         { name: "Javascript", icon: SiJavascript, color: "text-yellow-300" },
         { name: "C++", icon: SiCplusplus, color: "text-blue-400" },
         { name: "C#", icon: PiFileCSharpFill, color: "text-purple-500" },
         { name: "Lua", icon: SiLua, color: "text-blue-800" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-300" },
 
     ],
     framework: [
-        { name: "React", icon: FaReact, color: "text-cyan-500" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-300" },
+        { name: "Python", icon: FaPython, color: "text-yellow-300" },
+        { name: "FastAPI", icon: FaPython, color: "text-cyan-300" },
 
     ],
     infra: [
@@ -41,7 +41,7 @@ const skillsData = {
         { name: "NFC Maintenance", icon: SiNfc, color: "text-cyan-500" },
         { name: "BIOS SETUP", icon: SiInternetcomputer, color: "text-cyan-500" },
     ],
-    tools: [
+    others: [
         { name: "Git", icon: FaGitAlt, color: "text-orange-500" },
         { name: "VS Code", icon: VscVscode, color: "text-blue-400" },
         { name: "Postman", icon: SiPostman, color: "text-orange-500" },
@@ -52,17 +52,13 @@ const skillsData = {
         { name: "Bun", icon: SiBun, color: "text-white" },
         { name: "Unity", icon: FaUnity, color: "text-white" },
         { name: "Vite", icon: SiVite, color: "text-purple-500" },
-    ],
-    blockchain: [
-        { name: "Coinbase", icon: SiCoinbase, color: "text-cyan-500" },
-        { name: "Ether.Js", icon: SiEthers, color: "text-purple-400" },
-        { name: "Solidity", icon: SiSolidity, color: "text-black-500" },
-    ],
-    cloud: [
         { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
         { name: "Supabase", icon: SiSupabase, color: "text-emerald-500" },
         { name: "Firebase", icon: SiFirebase, color: "text-orange-500" },
-    ]
+    ],
+    mobile: [
+        { name: "Flutter", icon: SiFlutter, color: "text-purple-500" },
+    ],
 };
 
 export function Skills() {
