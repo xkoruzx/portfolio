@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Suradit | Portfolio",
-  description: "Junior-to-Intermediate Full Stack Developer & IT Specialist Portfolio",
+  description: "Junior Web Dev | Turning ideas into functional, user-focused applications. Actively seeking opportunities to grow in real-world development.",
 };
 
 export default function RootLayout({
