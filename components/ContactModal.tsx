@@ -58,7 +58,7 @@ const childVariants: Variants = {
 const socialLinks = [
     { name: "GitHub", icon: Github, href: "https://github.com/xkoruzx", color: "hover:text-white" },
     { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/suradit-rongmuang-3856a8355/", color: "hover:text-blue-400" },
-    { name: "Email", icon: Mail, href: "mailto:suradit.nus@gmail.com", color: "hover:text-red-400" },
+    { name: "Email", icon: Mail, href: "mailto:suradit.nus@gmail.com?subject=Hi I'am Nus &body=If you want to text me you can text me here!!", color: "hover:text-red-400" },
 ];
 
 export function ContactModal({ isOpen, onClose }: ContactModalProps) {

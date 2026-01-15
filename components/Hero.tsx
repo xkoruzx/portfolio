@@ -40,7 +40,7 @@ export function Hero({ onContactClick }: HeroProps) {
                     </h1>
 
                     <p className="text-text-muted text-lg md:text-xl max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed">
-                        Junior Web / Full-Stack Developer Building real-world applications with modern web technologies. Open to opportunities and eager to grow with real projects.
+                        Junior Web / Full-Stack Developer Turning ideas into functional, user-focused applications. Actively seeking opportunities to grow in real-world development.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">

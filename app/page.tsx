@@ -34,7 +34,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Experience />
-      <Vault />
+      {/* <Vault /> */}
       <Footer />
 
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
