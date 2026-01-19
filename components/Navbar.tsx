@@ -21,7 +21,6 @@ export function Navbar({ onContactClick }: NavbarProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);

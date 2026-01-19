@@ -9,7 +9,6 @@ import { SiNextdotjs, SiTailwindcss, SiTypescript, SiPostgresql, SiNginx, SiLua,
 import { VscVscode } from "react-icons/vsc";
 import { BiMobile } from "react-icons/bi";
 
-// Organize data structure for efficient filtering
 const categories = [
     { id: "languages", title: "Frontend", icon: Layout },
     { id: "framework", title: "Backend", icon: Database },

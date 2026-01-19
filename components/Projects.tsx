@@ -5,7 +5,6 @@ import { Github, ExternalLink, Code2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-// Mock data updated with `preview` images (using taller placeholders for the effect)
 const projects = [
     {
         title: "E-Commerce Website.ts",

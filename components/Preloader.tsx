@@ -19,10 +19,9 @@ export const Preloader = ({ onFinish }: { onFinish: () => void }) => {
         if (lineIndex < terminalLines.length) {
             const timeout = setTimeout(() => {
                 setLineIndex((prev) => prev + 1);
-            }, 300); // Speed of typing/line appear
+            }, 300);
             return () => clearTimeout(timeout);
         } else {
-            // Phase 1 Complete -> Start Phase 2
             const timeout = setTimeout(() => {
                 setShowIdentity(true);
             }, 500);
@@ -30,12 +29,11 @@ export const Preloader = ({ onFinish }: { onFinish: () => void }) => {
         }
     }, [lineIndex]);
 
-    // Phase 2: Identity Reveal duration
     useEffect(() => {
         if (showIdentity) {
             const timeout = setTimeout(() => {
                 onFinish();
-            }, 1200); // How long the identity stays before curtain lift
+            }, 1200);
             return () => clearTimeout(timeout);
         }
     }, [showIdentity, onFinish]);
@@ -48,7 +46,6 @@ export const Preloader = ({ onFinish }: { onFinish: () => void }) => {
         >
             <div className="w-full max-w-lg p-6 font-mono text-sm md:text-base">
                 {!showIdentity ? (
-                    // Phase 1: Terminal
                     <div className="text-gray-300 space-y-2">
                         {terminalLines.slice(0, lineIndex + 1).map((line, i) => (
                             <motion.div
@@ -68,7 +65,6 @@ export const Preloader = ({ onFinish }: { onFinish: () => void }) => {
                         />
                     </div>
                 ) : (
-                    // Phase 2: Identity Reveal
                     <motion.div
                         className="text-center"
                         initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
